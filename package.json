@@ -1,0 +1,11 @@
+{
+  "name": "vixenn",
+  "version": "0.1.0",
+  "description": "Vixenn desktop browser",
+  "main": "main.js",
+  "author": "Vixenn",
+  "license": "MIT",
+  "scripts": {"start":"electron .", "dist":"electron-builder --win portable", "check":"node --check main.js && node --check preload.js && node --check ui/app.js && node --test tests/*.test.js"},
+  "devDependencies": {"electron":"^43.0.0", "electron-builder":"^26.0.12"},
+  "build": {"appId":"com.vixenn.browser", "productName":"Vixenn", "directories":{"output":"release"}, "files":["main.js","preload.js","navigation.js","ui/**/*","package.json"], "win":{"target":"portable"}, "portable":{"artifactName":"Vixenn-${version}-Windows.exe"}}
+}
